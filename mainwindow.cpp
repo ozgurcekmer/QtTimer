@@ -7,11 +7,11 @@ MainWindow::MainWindow(QWidget* parent)
     : QWidget(parent)
 {
     setWindowTitle("Work Timer");
-    resize(300, 120);
+    resize(600, 240);
 
     timeLabel = new QLabel("00:00:00.00");
     QFont font("monospace");
-    font.setPointSize(20);
+    font.setPointSize(40);
     timeLabel->setFont(font);
     timeLabel->setAlignment(Qt::AlignCenter);
 
