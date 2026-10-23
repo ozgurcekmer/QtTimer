@@ -1,0 +1,1 @@
+/home/ocekmer/.local/bin/c++ -Wl,--dependency-file=CMakeFiles/QtTimer.dir/link.d CMakeFiles/QtTimer.dir/QtTimer_autogen/mocs_compilation.cpp.o CMakeFiles/QtTimer.dir/main.cpp.o CMakeFiles/QtTimer.dir/mainwindow.cpp.o -o QtTimer  /usr/lib64/libQt6Widgets.so.6.11.2 /usr/lib64/libQt6Gui.so.6.11.2 /usr/lib64/libGLX.so /usr/lib64/libOpenGL.so /usr/lib64/libQt6Core.so.6.11.2
