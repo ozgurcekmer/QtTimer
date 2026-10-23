@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.16)
+project(QtTimer VERSION 1.0 LANGUAGES CXX)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(Qt6 6.3 REQUIRED COMPONENTS Widgets)
+qt_standard_project_setup()
+
+qt_add_executable(QtTimer main.cpp mainwindow.cpp mainwindow.h)
+target_link_libraries(QtTimer PRIVATE Qt6::Widgets)
+
+include(CTest)
+if(BUILD_TESTING)
+    find_package(Qt6 REQUIRED COMPONENTS Test)
+    qt_add_executable(QtTimerTests tests/timer_test.cpp mainwindow.cpp mainwindow.h)
+    target_include_directories(QtTimerTests PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
+    target_link_libraries(QtTimerTests PRIVATE Qt6::Widgets Qt6::Test)
+    add_test(NAME QtTimerTests COMMAND QtTimerTests)
+    set_tests_properties(QtTimerTests PROPERTIES ENVIRONMENT "QT_QPA_PLATFORM=offscreen")
+endif()
